@@ -300,7 +300,7 @@ function Dashboard() {
               </p>
 
               <h1 className="text-6xl font-black leading-tight">
-                ChronoLock X
+               Vaultix
               </h1>
 
               <p className="text-gray-300 mt-3 text-lg">
@@ -633,7 +633,7 @@ function Dashboard() {
 
           {/* Footer */}
           <div className="text-center text-gray-400 mt-12">
-            © 2026 ChronoLock X —
+            © 2026 Vaultix —
             Temporal Cryptographic
             Governance
           </div>

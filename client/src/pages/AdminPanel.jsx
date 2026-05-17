@@ -201,7 +201,7 @@ function AdminPanel() {
 
                     {/* Footer */}
                     <div className="text-center text-gray-400 mt-12">
-                        © 2026 ChronoLock X —
+                        © 2026 Vaultix—
                         Administrative Intelligence Console
                     </div>
                 </div>

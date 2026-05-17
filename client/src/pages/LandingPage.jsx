@@ -27,7 +27,7 @@ function HomePage() {
             </h1>
 
             <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-              ChronoLock X is a next-generation cryptographic vault platform
+              Vaultix is a next-generation cryptographic vault platform
               that encrypts sensitive files, enforces time-based access control,
               and maintains audit-grade security logs.
             </p>

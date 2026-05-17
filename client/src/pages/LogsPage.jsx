@@ -144,7 +144,7 @@ function LogsPage() {
 
           {/* Footer */}
           <div className="text-center mt-12 text-gray-400 text-sm">
-            © 2026 ChronoLock X — Secure Temporal Vault Governance System
+            © 2026 Vaultix — Secure Temporal Vault Governance System
           </div>
         </div>
       </div>

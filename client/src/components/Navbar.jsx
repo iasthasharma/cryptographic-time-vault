@@ -9,7 +9,7 @@ function Navbar() {
           to="/"
           className="text-3xl font-extrabold text-white tracking-tight"
         >
-          ChronoLock X
+          Vaultix
         </Link>
 
         {/* Nav Links */}
