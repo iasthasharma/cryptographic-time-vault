@@ -140,7 +140,7 @@ function Dashboard() {
   const fetchFiles = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/files",
+        "https://vaultix-backend.onrender.com/files",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -178,7 +178,7 @@ function Dashboard() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/files/upload",
+        "https://vaultix-backend.onrender.com/files/upload",
         {
           method: "POST",
           headers: {
@@ -586,7 +586,7 @@ function Dashboard() {
                       ) ===
                       "Unlocked" ? (
                         <a
-                          href={`http://localhost:5000/files/download/${item.id}?token=${token}`}
+                          href={`https://vaultix-backend.onrender.com/files/download/${item.id}?token=${token}`}
                           target="_blank"
                           rel="noreferrer"
                           className="bg-cyan-400 text-black font-bold px-6 py-3 rounded-2xl"
