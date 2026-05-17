@@ -28,13 +28,16 @@ function AuthPage() {
       : { username, email, password };
 
     try {
-      const response = await fetch(`http://localhost:5000/auth/${endpoint}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+      const response = await fetch(
+        `https://vaultix-backend.onrender.com/auth/${endpoint}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -151,6 +154,7 @@ function AuthPage() {
             >
               {isLogin ? "Login" : "Register"}
             </button>
+
             <div className="flex justify-end mt-2">
               <button
                 type="button"
