@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "lucide-react": "^1.16.0",
+    "ogl": "^1.0.11",
+    "three": "^0.184.0"
+  }
+}
