@@ -1,49 +1,30 @@
-name: Vaultix CI Pipeline
+name: Vaultix CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # STEP 1: Checkout code
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # STEP 2: Setup Node
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # ======================
-      # SERVER INSTALL + CHECK
-      # ======================
-      - name: Install Server Dependencies
+      - name: Install server dependencies
         working-directory: ./server
         run: npm install
 
-      - name: Server Basic Check
-        working-directory: ./server
-        run: node -e "console.log('Server OK')"
-
-      # ======================
-      # CLIENT INSTALL + BUILD
-      # ======================
-      - name: Install Client Dependencies
+      - name: Install client dependencies
         working-directory: ./client
         run: npm install
 
-      - name: Build React App
+      - name: Build client
         working-directory: ./client
         run: npm run build
-
-      # ======================
-      # SUCCESS MESSAGE
-      # ======================
-      - name: CI Completed
-        run: echo "Vaultix CI pipeline completed successfully"
