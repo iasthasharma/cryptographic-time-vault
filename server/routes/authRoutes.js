@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
   }
 
   try {
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 4);
 
     db.run(
       `INSERT INTO users (username, email, password) VALUES (?, ?, ?)`,
@@ -78,15 +78,15 @@ router.post("/login", (req, res) => {
 
       logAction(user.id, "LOGIN", null);
 
-      try {
-        await sendMail(
-          user.email,
-          "Vaultix Login Alert ⚠️",
-          "New login detected on your account."
-        );
-      } catch (e) {
-        console.error(e);
-      }
+      // try {
+      //   await sendMail(
+      //     user.email,
+      //     "Vaultix Login Alert ⚠️",
+      //     "New login detected on your account."
+      //   );
+      // } catch (e) {
+      //   console.error(e);
+      // }
 
       res.json({ token });
     }
@@ -117,18 +117,20 @@ router.post("/forgot-password", (req, res) => {
 
         const resetLink = `http://localhost:5173/reset-password/${token}`;
 
-        try {
-          await sendMail(
-            email,
-            "Vaultix Password Reset",
-            `Click below to reset your password (valid 15 min):\n\n${resetLink}`
-          );
+        // try {
+        //   sendMail(
+        //     user.email,
+        //     "Vaultix Login Alert ⚠️",
+        //     `Hi ${user.username}, a new login was detected on your Vaultix account. If this wasn't you, please secure your account immediately.`
+        //   ).catch((mailErr) => {
+        //     console.error("Login email failed:", mailErr);
+        //   });
 
-          res.send("Reset link sent to email");
-        } catch (e) {
-          console.error(e);
-          res.status(500).send("Email failed");
-        }
+        //   res.send("Reset link sent to email");
+        // } catch (e) {
+        //   console.error(e);
+        //   res.status(500).send("Email failed");
+        // }
       }
     );
   });
